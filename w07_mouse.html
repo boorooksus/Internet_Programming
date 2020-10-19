@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mouse</title>
+
+        <style>
+            #res{
+                border: solid 2px green;
+            }
+        </style>
+
+        <script>
+            var resBorder = 2;
+
+            function show(e){
+                //console.log(e.screenX);
+                var location = "";
+                // location += e.screenX + " X " + e.screenY;
+                location += e.clientX + " X " + e.clientY;
+                document.getElementById("res").value = location;
+            }
+
+            function wheel(e){
+                console.log(e.wheelDelta);
+                var wheel = "";
+                wheel += e.wheelDelta;
+                document.getElementById("wheel").value = wheel;
+
+                var res = document.getElementById("res");
+                if(e.wheelDelta > 0){
+                    resBorder++;
+                } else{
+                    resBorder--;
+                }
+                res.style.borderWidth = resBorder + "px";
+            }
+
+            function but(e) {
+                console.log(e.button);
+                var res = document.createElement("span");
+                res.id = "temp";
+                res.innerHTML = e.button;
+                console.log(res);
+
+                var temp = document.getElementById("temp");
+                document.getElementById("but").removeChild(temp);
+                document.getElementById("but").appendChild(res);
+            }
+        </script>
+    </head>
+    <body onmousemove="show(event)" onmousewheel="wheel(event)" onmousedown="but(event)">
+        <div>
+            mouse position: <input type="text" id="res"><br>
+            mouse wheelDelta: <input type="text" id="wheel"><br>
+            mouse button: <span id="but"><span id="temp"></span></span><br>
+            <img src="media/apple.png">
+        </div>       
+    </body>
+</html>
