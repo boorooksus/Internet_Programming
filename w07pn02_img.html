@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>img loading</title>
+        <script>
+            var img_srcs = ["media/apple.png",
+                            "media/banana.jpg",
+                            "media/mango.jpg"]
+            var imgs = new Array();
+            for(var i = 0; i < img_srcs.length; i++){
+                imgs[i] = new Image();
+                imgs[i].src = img_srcs[i];
+            }
+            var cur = 0;
+
+            function show(){
+                cur = (cur + 1) % imgs.length;
+                console.log(imgs[cur]);
+                document.getElementById("res").src = imgs[cur].src;
+            }
+        </script>
+        <style>
+            #res {
+                width: 200px;
+                border:20px ridge green
+            }
+        </style>
+    </head>
+    <body id="b">
+        <img id="res" onclick="show()" src="media/apple.png">
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>prompt</title>
+    </head>
+    <body>
+
+        <form id="menu">
+            <input type="checkbox" name="a" value="b">
+            <label for="a">a</label>
+            <input type="checkbox" name="b" value="b">
+            <label for="b">b</label>
+            <input type="checkbox" name="c" value="c">
+            <label for="c">c</label>
+            <input type="button" onclick="check()" value="button">
+        </form>
+        <p id="hi"></p>
+
+        <script>
+            function check(){
+                var menu = document.getElementById("menu");
+                console.log(menu);
+                var order = [];
+                for(var i = 0; i < menu.length; i++){
+                    if(menu[i].checked){
+                        order.push(menu[i].value);
+                    }
+                }
+                hi.innerHTML = order;
+            }
+        </script>
+    </body>
+
+    
+</html>

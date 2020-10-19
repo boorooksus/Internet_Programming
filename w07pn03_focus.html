@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>focus & onblur</title>
+        <script>
+            function check(obj){
+                if(obj.value === ""){
+                    alert(obj.id + " is empty!");
+                    obj.focus();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        name: 
+        <input type="text" id="name" onblur="check(this)"><br>
+        SSN:
+        <input type="text" id="ssn">
+    </body>
+</html>

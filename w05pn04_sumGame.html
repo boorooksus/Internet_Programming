@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sum game</title>
+        <script>
+            var ans = 60;
+            function cal(res){
+                if(ans == res){
+                    alert("correct!!!");
+                } else{
+                    alert("Wrong...");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        20 + 40=<br>
+        res: <input type="text" id="res">
+        <button onclick="cal(res.value)">result</button>
+    </body>
+</html>

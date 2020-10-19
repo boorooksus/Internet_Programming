@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM</title>
+        <script>
+            function show(obj){
+                console.log(obj.id);
+                var ans = document.createElement("div");
+                //var obj = document.getElementById(obj);
+                if (obj.id === "p1"){
+                    ans.innerHTML = "answer"
+                    obj.appendChild(ans);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p id="p1">
+            question<br>
+            <button onclick="show(p1)">show</button>
+        </p>
+    </body>
+</html>

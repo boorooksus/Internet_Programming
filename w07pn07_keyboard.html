@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>key listener and event object property</title>
+        <script>
+            function runner(e){
+                //console.log(e.altKey);
+                console.log(e);
+                var res = document.createElement("div");
+                res.style.backgroundColor = "lightSkyBlue";
+
+                if(e.altKey){
+                    if(e.code === "AltLeft") {
+                        res.innerHTML = "left Alt is pressed!";
+                    } else{
+                        res.innerHTML = "right Alt is pressed!";
+                    }
+                } else if(e.shiftKey){
+                    if(e.code === "ShiftLeft"){
+                        res.innerHTML = "left shift is pressed!";
+                        console.log('hi');
+                    } else{
+                        res.innerHTML = "right shift is pressed!";
+                    }
+                } else{
+                    var temp = String.fromCharCode(e.keyCode);
+                    res.innerHTML = temp + " key is pressed!";
+                }
+                console.log(document.getElementById("b").lastChild);
+                document.getElementById("b").removeChild(document.getElementById("b").lastChild);
+                document.getElementById("b").appendChild(res);
+            }
+        </script>
+    </head>
+    <body id="b">
+        <input type="text" id="key" onkeydown="runner(event)">
+    </body>
+</html>

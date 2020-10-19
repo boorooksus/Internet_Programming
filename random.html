@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>prompt</title>
+    </head>
+    <body>
+        <script>
+            var arr = [];
+            for(var i = 0; i < 5; i++){
+                arr[i] = Math.floor(Math.random() * 99 + 1)
+            }
+            arr.sort(function(a,b){return(b - a)});
+            document.write(arr);
+            // for(var i = 0; i < 3; i++){
+            //     document.write("<p>" + book[i] + "</p>");
+            // }
+        </script>
+    </body>
+</html>

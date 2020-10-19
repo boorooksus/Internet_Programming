@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>range</title>
+        <script>
+            function cal(v){
+                console.log(v);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="range" id="num" min="0" max="100" list="li" onchange="cal(this.value)">
+        <datalist id="li">
+            <option value="10">Low</option>
+            <option value="50">Mid</option>
+            <option value="90">High</option>
+        </datalist><br>
+
+        <input type="number" id="num2" min="0" max="100" step="10" onchange="cal(this.value)">
+    </body>
+</html>

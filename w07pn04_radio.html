@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>radio</title>
+        <script>
+            function runner(){
+                var cities = document.getElementById("cities");
+                for(var i = 0; i < cities.length; i++){
+                    //console.log(cities[i]);
+                    if(cities[i].checked){
+                        console.log(cities[i].id + ': hi');
+                        alert(cities[i].id + " is selected!");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="cities" onchange="runner()">
+            <input type="radio" name="city" id="seoul" checked>
+            <label for="seoul">Seoul</label>
+            <input type="radio" name="city" id="busan">
+            <label for="busan">Busan</label>
+            <input type="radio" name="city" id="chuncheon">
+            <label for="chuncheon">Chuncheon</label>
+        </form>
+        
+    </body>
+</html>

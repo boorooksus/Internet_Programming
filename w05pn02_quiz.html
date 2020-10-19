@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>quiz</title>
+        <script>
+            var cnt = 0;
+            var ans = 50;
+            function check(){
+                cnt++;
+                var num = document.getElementById("num").value;
+                if (num > ans){
+                    document.getElementById("cnt").value = cnt;
+                    document.getElementById("hint").value = "high"
+                } else if (num < ans){
+                    document.getElementById("cnt").value = cnt;
+                    document.getElementById("hint").value = "low"
+                } else{
+                    document.getElementById("cnt").value = cnt;
+                    document.getElementById("hint").value = "success"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        num: <input type="text" id="num">
+        <button onclick="check()">confirm</button><br>
+        count: <input type="text" id="cnt"><br>
+        hint: <input type="text" id="hint">
+    </body>
+</html>

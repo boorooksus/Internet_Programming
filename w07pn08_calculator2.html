@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cal</title>
+        <script>
+            function cal(e){
+                console.log(e.keyCode);
+                if(e.keyCode === 13){
+                    var exp = document.getElementById("exp").value;
+                    document.getElementById("res").value = eval(exp);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Expression:
+        <input type="text" id="exp" onkeydown="cal(event)"><br>
+        result:
+        <input type="text" id="res">
+    </body>
+</html>

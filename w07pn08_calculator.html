@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>calculator</title>
+        <script>
+            function cal(e){
+                //console.log(e.keyCode);
+                if(e.keyCode === 13){
+                    var exp = document.getElementById("exp").value;
+                    //console.log(exp);
+                    var res = document.getElementById("res");
+                    res.value = eval(exp);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        식:
+        <input type="text" id="exp" onkeydown="cal(event)"><br>
+        값:
+        <input type="res" id="res">
+    </body>
+</html>

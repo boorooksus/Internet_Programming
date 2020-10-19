@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>time</title>
+    </head>
+    <body id="hi">
+        <script>
+            var today = new Date();
+            //document.write(today.getHours());
+            if(today.getHours() >= 12){
+                document.getElementById("hi").style.background="lightskyblue";
+            } else{
+                document.getElementById("hi").style.background="yellow";
+            }
+            document.write("현재 시간 : " + today.getHours() + "시," + today.getMinutes() + "분," + today.getSeconds() + "초<br>")
+        </script>
+    </body>
+</html>

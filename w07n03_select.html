@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>select</title>
+        <script>
+            function print(fruit){
+                document.getElementById("hi").innerHTML=fruit;
+            }
+        </script>
+    </head>
+    <body>
+        <select id="fruits" onchange="print(this.value)">
+            <option value="banana">banana</option>
+            <option value="apple">apple</option>
+        </select>
+        <p id=hi></p>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>listener1</title>
+        <script>
+            var total = 0;
+
+            function hatCal(){
+                var hat = document.getElementById("hat");
+                if(hat.checked){
+                    total += 1000;
+                } else{
+                    total -= 1000;
+                }
+                document.getElementById("res").value = total;
+            }
+
+            function shoesCal(){
+                var shoes = document.getElementById("shoes");
+                if(shoes.checked){
+                    total += 2000;
+                } else{
+                    total -= 2000;
+                }
+                document.getElementById("res").value = total;
+            }
+        </script>
+    </head>
+    <body>
+        <form id="products">
+            <input type="checkbox" id="hat" name="hat" onclick="hatCal()">
+            <label for="hat" value="hat">hat</label>
+            <input type="checkbox" id="shoes" name="shoes" onclick="shoesCal()">
+            <label for="shoes" value="shoes">shoes</label>
+        </form>
+        total:
+        <input type="text" id="res" value=0>
+    </body>
+</html>

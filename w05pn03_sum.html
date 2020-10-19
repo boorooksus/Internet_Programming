@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sum cal</title>
+        <script>
+            function cal(first, second, res){
+                console.log(first, second);
+                res.value=Number(first) + Number(second);
+            }
+        </script>
+    </head>
+    <body>
+        first: <input type="text" id="first"><br>
+        second: <input type="text" id="second"><br>
+        result: <input type="text" id="res">
+        <button onclick="cal(first.value, second.value, res)">cal</button>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>quiz</title>
+        <style>
+            .ans{
+                color:blue;
+            }
+        </style>
+        <script>
+            var isAns = false;
+
+            function ans(){
+                var ans = document.getElementsByClassName("ans");
+                for(var i = 0; i < ans.length; i++){
+                    if(isAns){
+                        ans[i].style.visibility = "hidden";
+                    } else{
+                        ans[i].style.visibility = "visible";
+                    }
+                }
+                if(isAns){
+                    isAns = false;
+                } else{
+                    isAns = true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="ans()">show/hide</button>
+        <ol>
+            <li>I (<span class="ans" style="visibility:hidden;">love</span>) you</li>
+            <li>CSS is Cascading (<span class="ans" style="visibility:hidden;">Style</span>) Sheet.</li>
+        </ol>
+    </body>
+</html>
