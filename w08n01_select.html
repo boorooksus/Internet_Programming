@@ -3,10 +3,27 @@
     <head>
         <title>select</title>
         <script>
+            function getSize(){
+                var image = document.getElementById("temp");
+                console.log(image);
+                var size = "";
+                size += image.width + " X " + image.height + "   ";
+                document.getElementById("size").innerHTML = size;
+            }
+
+            function mouse(e){
+                console.log(e);
+            }
+
             function show(x){
-                console.log(x);
+                //console.log(x);
                 var res = document.createElement("img");
-                res.src = x;
+                var temp = new Image();
+                temp.src = x;
+                res.src = temp.src;
+                //res.setAttribute(load, "getSize()");
+                res.addEventListener("load", getSize());
+                res.addEventListener("mousemove", mouse(event));
                 var b = document.getElementById("b");
                 b.removeChild(document.getElementById("temp"));
                 res.id = "temp";
@@ -19,7 +36,9 @@
             <option value="media/apple.png">apple</option>
             <option value="media/banana.jpg" selected>banana</option>
             <option value="media/mango.jpg">mango</option>
-        </select><br>
+        </select>
+        <span id="size"></span>
+        <br>
         <div id="temp"></div>
     </body>
 </html>
