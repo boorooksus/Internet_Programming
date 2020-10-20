@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>select</title>
+        <script>
+            function show(x){
+                console.log(x);
+                var res = document.createElement("img");
+                res.src = x;
+                var b = document.getElementById("b");
+                b.removeChild(document.getElementById("temp"));
+                res.id = "temp";
+                b.appendChild(res);
+            }
+        </script>
+    </head>
+    <body id="b">
+        <select id="opt" onchange="show(this.value)">
+            <option value="media/apple.png">apple</option>
+            <option value="media/banana.jpg" selected>banana</option>
+            <option value="media/mango.jpg">mango</option>
+        </select><br>
+        <div id="temp"></div>
+    </body>
+</html>

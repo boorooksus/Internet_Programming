@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cart</title>
+
+        <script>
+            var total = 50;
+
+            function cal(obj){
+                if(obj.checked){
+                    total += parseInt(obj.value);
+                } else{
+                    total -= parseInt(obj.value);
+                }
+
+                var res = document.getElementById("res");
+                res.value = total;
+            }
+
+            var cur = 50;
+            function cal2(obj){
+                total -= cur;
+                cur = Number(obj.value);
+                total += cur;
+
+                var res = document.getElementById("res");
+                res.value = total;
+            }
+
+            function calendar(obj){
+                console.log(obj.value);
+                var pdate = new Date(obj.value);
+                console.log(pdate);
+                var res = document.getElementById("date_res");
+                res.value = pdate.toDateString();
+            }
+
+            document.oncontextmenu = function() {
+                alert("not permitted");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <form id="products">
+            <fieldset onmouseover="this.style.backgroundColor='lightskyblue'" onmouseout="this.style.backgroundColor='cyan'">
+                <legend>products</legend>
+                <input type="checkbox" value="10000" id="hat" onchange="cal(this)">
+                <label for="hat">hat</label>
+                <input type="checkbox" value="30000" id="shoes" onchange="cal(this)">
+                <label for="shoes">shoes</label>
+                <input type="checkbox" value="80000" id="bag" onchange="cal(this)" onclick="event.preventDefault()">
+                <label for="bag">bag</label>
+                </fieldset>
+        </form>
+        <br>
+        <input type="range" onchange="cal2(this)" min="0" max="100">
+        <br>
+        sum: <input type="text" id="res" value="0">
+        <hr>
+        tel: <input type="tel">
+        <hr>
+        date: <input type="date" onchange="calendar(this)"><br>
+        <input type="text" id="date_res"><br>
+        <hr>
+        city: <input type="text" list="cities">
+        <datalist id="cities">
+            <option>seoul</option>
+            <option>busan</option>
+        </datalist>
+    </body>
+</html>
